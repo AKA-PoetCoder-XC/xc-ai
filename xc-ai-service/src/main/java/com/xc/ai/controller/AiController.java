@@ -1,12 +1,9 @@
 package com.xc.ai.controller;
 
-import com.xc.ai.service.TongYiService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "AI控制器")
@@ -16,7 +13,7 @@ public class AiController {
 
     @GetMapping("/service-info")
     @Operation(summary = "服务基本信息")
-    public String hello() {
+    public String serviceInfo() {
         return "Hello,this is xc-ai-service controller";
     }
 
