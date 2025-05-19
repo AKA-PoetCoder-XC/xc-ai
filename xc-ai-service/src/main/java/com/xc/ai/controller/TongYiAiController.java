@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag(name = "AI控制器")
+@Tag(name = "通义相关接口")
 @RestController
-@RequestMapping(("/ai"))
-public class AiController {
+@RequestMapping(("/tong-yi"))
+public class TongYiAiController {
 
-    @GetMapping("/service-info")
-    @Operation(summary = "服务基本信息")
-    public String hello() {
-        return "Hello,this is xc-ai-service controller";
+    @Autowired
+    private TongYiService tongYiService;
+
+    @GetMapping("/chat")
+    @Operation(summary = "普通聊天")
+    public String chat(@RequestParam("msg") String msg) {
+        return tongYiService.chat(msg);
     }
-
-
 }

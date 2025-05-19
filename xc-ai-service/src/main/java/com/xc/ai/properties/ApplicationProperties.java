@@ -1,4 +1,4 @@
-package com.xc.ai.config;
+package com.xc.ai.properties;
 
 import jakarta.annotation.PostConstruct;
 import lombok.Data;
@@ -18,13 +18,15 @@ import org.springframework.context.annotation.Configuration;
 @RefreshScope
 @Configuration
 @ConfigurationProperties(prefix = "xc")
-public class ApplicationConfig {
+public class ApplicationProperties {
 
 	private Nacos nacos;
 
+	private AliYun aliYun;
+
 	@PostConstruct
 	private void postConstruct() {
-		log.debug("工程配置 ApplicationConfig {}", this.toString());
+		log.debug("工程配置 ApplicationProperties {}", this.toString());
 	}
 
 	@Data
@@ -33,6 +35,11 @@ public class ApplicationConfig {
 		private String namespace;
 		private String username;
 		private String password;
+	}
+
+	@Data
+	public static class AliYun {
+		private String apiKey;
 	}
 
 

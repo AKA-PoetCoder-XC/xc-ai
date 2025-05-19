@@ -35,6 +35,11 @@ spring:
         password: ${spring.cloud.nacos.discovery.password}
         file-extension: yaml
         group: DEFAULT_GROUP
+    ai:
+      tongyi:
+        api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
+
+
 #    inetutils:
 #      preferred-networks:
 #        - 192.168.28.223
