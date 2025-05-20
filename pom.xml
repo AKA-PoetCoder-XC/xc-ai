@@ -16,9 +16,20 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>xc-ai-facade</module>
-        <module>xc-ai-service</module>
+        <module>xc-ai-client</module>
+        <module>xc-ai-server</module>
     </modules>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 <!--    <properties>-->
 <!--        <spring-ai.version>1.0.0-SNAPSHOT</spring-ai.version>-->

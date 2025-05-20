@@ -1,5 +1,6 @@
 package com.xc.ai.service.impl;
 
+import com.alibaba.cloud.ai.tongyi.chat.TongYiChatClient;
 import com.xc.ai.service.TongYiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.ChatClient;
@@ -17,6 +18,9 @@ public class TongYiServiceImpl implements TongYiService  {
 
     @Autowired
     private StreamingChatClient streamingChatClient;
+
+    @Autowired
+    private TongYiChatClient tongYiChatClient;
 
     @Override
     public String chat(String msg) {
