@@ -24,9 +24,9 @@ public class TongYiAiController {
         return tongYiService.chat(msg);
     }
 
-    @GetMapping("/stream-chat")
-    @Operation(summary = "流式响应聊天聊天")
-    public Flux<String> streamChat(@RequestParam("msg") String msg) {
-        return tongYiService.streamChat(msg);
-    }
+//    @GetMapping("/stream-chat")
+//    @Operation(summary = "流式响应聊天聊天")
+//    public Flux<String> streamChat(@RequestParam("msg") String msg) {
+//        return tongYiService.streamChat(msg);
+//    }
 }

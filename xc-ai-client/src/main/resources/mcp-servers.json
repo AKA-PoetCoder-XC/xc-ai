@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "mysql": {
+      "command": "uvx.exe",
+      "args": [
+        "--from",
+        "mysql-mcp-server",
+        "mysql_mcp_server"
+      ],
+      "env": {
+        "MYSQL_HOST": "10.70.17.9",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "dba",
+        "MYSQL_PASSWORD": "dba@123",
+        "MYSQL_DATABASE": "shop_center"
+      }
+    }
+  }
+}

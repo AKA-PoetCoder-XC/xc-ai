@@ -8,20 +8,20 @@ server:
 xc:
   nacos:
     # 在家用这个配置
-    server-addr: 172.26.240.140:8844,172.26.240.140:8846,172.26.240.140:8848
-    namespace: public
-    username: nacos
-    password: nacos
+#    server-addr: 172.26.240.140:8844,172.26.240.140:8846,172.26.240.140:8848
+#    namespace: public
+#    username: nacos
+#    password: nacos
     # 公司用这个配置
-#    server-addr: 192.168.29.108:8844,192.168.29.108:8846,192.168.29.108:8848
-#    namespace: local_xc
-#    username: ""
-#    password: ""
+    server-addr: 192.168.29.108:8844,192.168.29.108:8846,192.168.29.108:8848
+    namespace: local_xc
+    username: ""
+    password: ""
 # Spring
 spring:
   application:
     # 应用名称
-    name: xc-ai-service
+    name: xc-ai-server
   profiles:
     # 环境配置
     active: local
@@ -43,9 +43,9 @@ spring:
         group: DEFAULT_GROUP
 
     # 通义模型配置
-    ai:
-      tongyi:
-        api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
+#    ai:
+#      tongyi:
+#        api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
 
 
 #    inetutils:
