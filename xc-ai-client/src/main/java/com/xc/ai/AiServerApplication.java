@@ -13,9 +13,9 @@ import java.net.UnknownHostException;
 @Slf4j
 @SpringBootApplication
 @EnableFeignClients
-public class AiApplication {
+public class AiServerApplication {
     public static void main(String[] args) throws UnknownHostException {
-        ConfigurableApplicationContext application = SpringApplication.run(AiApplication.class, args);
+        ConfigurableApplicationContext application = SpringApplication.run(AiServerApplication.class, args);
         Environment env = application.getEnvironment();
         String ip = InetAddress.getLocalHost().getHostAddress();
         String port = env.getProperty("server.port");
