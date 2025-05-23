@@ -1,6 +1,5 @@
 package com.xc.ai.domain.qwen.service.impl;
 
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import com.xc.ai.domain.qwen.service.TongYiService;
 import com.xc.ai.domain.qwen.service.advisor.ReasoningContentAdvisor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,11 +37,11 @@ public class TongYiServiceImpl implements TongYiService  {
                         new SimpleLoggerAdvisor()
                 )
                 // 设置 ChatClient 中 ChatModel 的 Options 参数
-                .defaultOptions(
-                        DashScopeChatOptions.builder()
-                                .withTopP(0.7)
-                                .build()
-                )
+//                .defaultOptions(
+//                        DashScopeChatOptions.builder()
+//                                .withTopP(0.7)
+//                                .build()
+//                )
                 .build();
     }
 
