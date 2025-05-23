@@ -1,4 +1,4 @@
-package com.xc.ai.service;
+package com.xc.ai.domain.qwen.service;
 
 import reactor.core.publisher.Flux;
 

@@ -17,7 +17,7 @@
 
     <properties>
         <!-- Spring AI -->
-        <spring-ai.version>1.0.0-RC1</spring-ai.version>
+        <spring-ai.version>1.1.0-SNAPSHOT</spring-ai.version>
     </properties>
 
     <modules>

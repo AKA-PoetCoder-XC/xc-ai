@@ -49,7 +49,11 @@ spring:
           model: qwen3:8b
           temperature: 0.9
           top_p: 0.5
-
+    dashboard:
+      api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
+      chat:
+        options:
+          model: qwen-turbo
     # 通义模型配置
 #    ai:
 #      tongyi:
