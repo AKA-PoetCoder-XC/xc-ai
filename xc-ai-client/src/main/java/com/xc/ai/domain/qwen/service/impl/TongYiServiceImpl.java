@@ -1,5 +1,7 @@
 package com.xc.ai.domain.qwen.service.impl;
 
+import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
+import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import com.xc.ai.domain.qwen.service.TongYiService;
 import com.xc.ai.domain.qwen.service.advisor.ReasoningContentAdvisor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,9 +20,11 @@ import reactor.core.publisher.Flux;
 public class TongYiServiceImpl implements TongYiService  {
 
     private final ChatClient chatClient;
+    private final ChatModel chatModel;
 
     @Autowired
-    public TongYiServiceImpl(ChatModel chatModel) {
+    public TongYiServiceImpl(DashScopeChatModel chatModel) {
+        this.chatModel = chatModel;
         // 构造时，可以设置 ChatClient 的参数
         // {@link org.springframework.ai.chat.client.ChatClient};
         this.chatClient = ChatClient.builder(chatModel)
@@ -28,7 +32,6 @@ public class TongYiServiceImpl implements TongYiService  {
                 // 在使用 Chat Memory 时，需要指定对话 ID，以便 Spring AI 处理上下文。
                 .defaultAdvisors(
                         MessageChatMemoryAdvisor.builder(MessageWindowChatMemory.builder().build()).build(),
-
                         // 整合 QWQ 的思考过程到输出中
                         new ReasoningContentAdvisor(0)
                 )
@@ -37,24 +40,26 @@ public class TongYiServiceImpl implements TongYiService  {
                         new SimpleLoggerAdvisor()
                 )
                 // 设置 ChatClient 中 ChatModel 的 Options 参数
-//                .defaultOptions(
-//                        DashScopeChatOptions.builder()
-//                                .withTopP(0.7)
-//                                .build()
-//                )
+                .defaultOptions(
+                        DashScopeChatOptions.builder()
+                                .withTopP(0.7)
+                                .build()
+                )
                 .build();
     }
 
     @Override
     public String chat(String msg) {
-        return chatClient.prompt()
+        return chatClient.prompt(msg)
                 .call()
                 .content();
     }
 
     @Override
     public Flux<String> streamChat(String msg) {
-        return null;
+        return chatClient.prompt(msg)
+                .stream()
+                .content();
     }
 
 }

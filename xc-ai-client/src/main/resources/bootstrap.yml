@@ -41,9 +41,6 @@ spring:
         password: ${spring.cloud.nacos.discovery.password}
         file-extension: yaml
         group: DEFAULT_GROUP
-    ai:
-      tongyi:
-        api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
   ai:
     ollama:
       base-url: http://localhost:11434
@@ -52,7 +49,14 @@ spring:
           model: qwen3:8b
           temperature: 0.9
           top_p: 0.5
+
     # 通义模型配置
+    dashscope:
+      api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
+      chat:
+        options:
+          model: qwq-plus
+          stream: true
 
 
 #    inetutils:
