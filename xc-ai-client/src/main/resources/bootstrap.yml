@@ -68,11 +68,13 @@ spring:
           stream: true
     mcp:
       server:
-        name: webflux-mcp-server
-        version: 1.0.0
+        name: xc-mcp-server
+        version: 0.0.1
         type: ASYNC  # Recommended for reactive applications
-        instructions: "This reactive server provides time information tools and resources"
-        sse-message-endpoint: /mcp/messages
+        # 配置 sse 的根路径，默认值为 /sse
+        # 下面的最终路径为 ip:port/sse/mcp
+        sse-endpoint: /sse
+        sse-message-endpoint: /mcp
         capabilities:
           tool: true
           resource: true

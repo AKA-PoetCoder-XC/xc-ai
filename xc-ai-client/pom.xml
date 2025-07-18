@@ -30,9 +30,10 @@
 <!--            <artifactId>dashscope-sdk-java</artifactId>-->
 <!--            <version>2.20.6</version>-->
 <!--        </dependency>-->
+        <!-- mcp开发依赖,由于webflux与webmvc冲突,所以导入的mcp开发依赖必须是webmvc类型的,不能是webflux -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
+            <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
         </dependency>
     </dependencies>
 
