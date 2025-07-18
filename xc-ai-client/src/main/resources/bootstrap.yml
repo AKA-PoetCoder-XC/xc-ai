@@ -22,7 +22,7 @@ xc:
   bai-lian:
     api-key: sk-def3c5be5bac4d45ab310e4ef4af98ae
     code-map-app-id:
-      EQUIPMENT_REPAIR: 85f82f4ccbb04252b562bb1fb04155ec
+      EQUIPMENT_REPAIR: 3caf782edbac4ba583f5c1b49957c234
 # Spring
 spring:
   application:
@@ -47,6 +47,9 @@ spring:
         password: ${spring.cloud.nacos.discovery.password}
         file-extension: yaml
         group: DEFAULT_GROUP
+    inetutils:
+      preferred-networks:
+        - 192.168.28.2
   ai:
     ollama:
       base-url: http://localhost:11434
@@ -58,13 +61,20 @@ spring:
 
     # 通义模型配置
     dashscope:
-      api-key: sk-ad048c7f34ca43c78bb2fec759edf7d3
+      api-key: sk-def3c5be5bac4d45ab310e4ef4af98ae
       chat:
         options:
           model: qwq-plus
           stream: true
-
-
-#    inetutils:
-#      preferred-networks:
-#        - 192.168.28.223
+    mcp:
+      server:
+        name: webflux-mcp-server
+        version: 1.0.0
+        type: ASYNC  # Recommended for reactive applications
+        instructions: "This reactive server provides time information tools and resources"
+        sse-message-endpoint: /mcp/messages
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true

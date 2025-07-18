@@ -13,7 +13,7 @@ import lombok.Getter;
 @Getter
 public enum BaiLianAiAgentEnum {
 
-    EQUIPMENT_REPAIR_CHAT(BaiLianAiAgentCode.EQUIPMENT_REPAIR, "设备维修智能体"),
+    EQUIPMENT_REPAIR(BaiLianAiAgentCode.EQUIPMENT_REPAIR, "设备维修智能体"),
     ;
 
     @JsonValue
