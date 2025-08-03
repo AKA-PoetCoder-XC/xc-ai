@@ -23,7 +23,7 @@
     </properties>
 
     <modules>
-        <module>xc-ai-client</module>
+        <module>xc-ai-service</module>
     </modules>
 
     <dependencyManagement>
