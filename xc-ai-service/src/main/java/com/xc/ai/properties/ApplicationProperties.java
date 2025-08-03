@@ -29,8 +29,6 @@ public class ApplicationProperties {
 
 	private BaiLian baiLian;
 
-	private SseEmitter sseEmitter;
-
 	@PostConstruct
 	private void postConstruct() {
 		log.info("工程配置 ApplicationProperties {}", this);
@@ -49,14 +47,6 @@ public class ApplicationProperties {
 		private String apiKey; // 百炼apiKey
 		// Map<智能体应用编号,百炼应用appId>
 		private Map<String, String> codeMapAppId;
-	}
-
-	/**
-	 * SseEmitter配置信息
-	 */
-	@Data
-	public static class SseEmitter {
-		private long timeout;
 	}
 
 }

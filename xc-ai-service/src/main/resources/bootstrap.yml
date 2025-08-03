@@ -6,8 +6,6 @@ server:
 
 # nacos注册、配置地址、账号密码(未开启鉴权则填空字符串)
 xc:
-  sse-emitter:
-    timeout: 60000
   bai-lian:
     api-key: sk-def3c5be5bac4d45ab310e4ef4af98ae
     code-map-app-id:
