@@ -23,6 +23,8 @@ spring:
   cloud:
     nacos:
       server-addr: 192.168.1.93:8848
+      config:
+        file-extension: yml
   ai:
     ollama:
       base-url: http://localhost:11434

@@ -17,10 +17,11 @@ import java.util.Map;
  */
 @Slf4j
 @Data
-@RefreshScope
 @Configuration
 @ConfigurationProperties(prefix = "xc")
 public class ApplicationProperties {
+
+	private String remoteConfigName;
 
 	private AliYun aliYun;
 
