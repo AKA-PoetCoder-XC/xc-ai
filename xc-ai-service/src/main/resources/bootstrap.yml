@@ -2,7 +2,7 @@
 server:
   port: 8938
   servlet:
-    context-path: /xc-ai-service
+    context-path: /xc-ai
 
 # nacos注册、配置地址、账号密码(未开启鉴权则填空字符串)
 xc:
@@ -43,11 +43,11 @@ spring:
       server:
         name: xc-mcp-server
         version: 0.0.1
-        type: ASYNC  # Recommended for reactive applications
+        type: SYNC  # Recommended for reactive applications
         # 配置 sse 的根路径，默认值为 /sse
         # 下面的最终路径为 ip:port/sse/mcp
         sse-endpoint: /sse
-        sse-message-endpoint: /mcp
+        sse-message-endpoint: mcp/message # 默认是/mcp/message表示从应用的根目录访问，在配置了context-path的情况下会导致mcp客户端连接报错
         capabilities:
           tool: true
           resource: true
