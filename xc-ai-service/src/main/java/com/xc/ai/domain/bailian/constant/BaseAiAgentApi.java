@@ -8,6 +8,6 @@ package com.xc.ai.domain.bailian.constant;
  */
 public interface BaseAiAgentApi {
 
-    String APPLICATION_NAME = "xc-ai/ai-client";
+    String APPLICATION_NAME = "xc-ai/xc-ai-service=";
 
 }

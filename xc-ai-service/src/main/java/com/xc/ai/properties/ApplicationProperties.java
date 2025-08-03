@@ -22,8 +22,6 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "xc")
 public class ApplicationProperties {
 
-	private Nacos nacos;
-
 	private AliYun aliYun;
 
 	private BaiLian baiLian;
@@ -33,14 +31,6 @@ public class ApplicationProperties {
 	@PostConstruct
 	private void postConstruct() {
 		log.debug("工程配置 ApplicationProperties {}", this.toString());
-	}
-
-	@Data
-	public static class Nacos {
-		private String serverAddr;
-		private String namespace;
-		private String username;
-		private String password;
 	}
 
 	@Data
