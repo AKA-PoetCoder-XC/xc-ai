@@ -1,12 +1,14 @@
 package com.xc.ai.properties;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -31,7 +33,7 @@ public class ApplicationProperties {
 
 	@PostConstruct
 	private void postConstruct() {
-		log.debug("工程配置 ApplicationProperties {}", this.toString());
+		log.info("工程配置 ApplicationProperties {}", this);
 	}
 
 	@Data
