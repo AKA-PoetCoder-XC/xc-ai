@@ -2,7 +2,7 @@ package com.xc.ai.domain.qwen.service;
 
 import reactor.core.publisher.Flux;
 
-public interface TongYiService {
+public interface QwenService {
 
     /**
      * 普通聊天

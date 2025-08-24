@@ -2,7 +2,7 @@ package com.xc.ai.domain.qwen.service.impl;
 
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
 import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
-import com.xc.ai.domain.qwen.service.TongYiService;
+import com.xc.ai.domain.qwen.service.QwenService;
 import com.xc.ai.domain.qwen.service.advisor.ReasoningContentAdvisor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,13 +17,13 @@ import reactor.core.publisher.Flux;
 
 @Slf4j
 @Service
-public class TongYiServiceImpl implements TongYiService  {
+public class QwenServiceImpl implements QwenService {
 
     private final ChatClient chatClient;
     private final ChatModel chatModel;
 
     @Autowired
-    public TongYiServiceImpl(DashScopeChatModel chatModel) {
+    public QwenServiceImpl(DashScopeChatModel chatModel) {
         this.chatModel = chatModel;
         // 构造时，可以设置 ChatClient 的参数
         // {@link org.springframework.ai.chat.client.ChatClient};

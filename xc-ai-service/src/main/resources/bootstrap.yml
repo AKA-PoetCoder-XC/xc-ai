@@ -24,6 +24,12 @@ spring:
       config:
         file-extension: yml
   ai:
+    openai:
+      api-key: sk-f6f26934a4d04b8bb6e322c4ffd787f4
+      base-url: https://api.deepseek.com
+      chat:
+        options:
+          model: deepseek-chat
     ollama:
       base-url: http://localhost:11434
       chat:
@@ -37,8 +43,9 @@ spring:
       api-key: sk-def3c5be5bac4d45ab310e4ef4af98ae
       chat:
         options:
-          model: qwq-plus
+          model: qwen-plus
           stream: true
+    # mcp配置
     mcp:
       server:
         name: xc-mcp-server
