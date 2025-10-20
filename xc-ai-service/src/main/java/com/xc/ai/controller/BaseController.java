@@ -21,7 +21,7 @@ public class BaseController {
 
     @GetMapping("/info")
     @Operation(summary = "服务基本信息")
-    public String serviceInfo(@RequestParam("key") String key) {
+    public String serviceInfo(@RequestParam(value = "key", required = false) String key) {
         return "xiechen".equals(key) ? String.format("Hello,this is xc-ai-service controller, remote-config:%s", JSON.toJSONString(applicationProperties)) : "无权限!";
     }
 
