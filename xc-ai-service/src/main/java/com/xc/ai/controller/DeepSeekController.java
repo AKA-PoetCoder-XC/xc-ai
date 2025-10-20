@@ -1,5 +1,6 @@
 package com.xc.ai.controller;
 
+import com.xc.ai.domain.deepseek.service.DeepSeekService;
 import com.xc.ai.domain.qwen.service.QwenService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,17 +17,17 @@ import reactor.core.publisher.Flux;
 public class DeepSeekController {
 
     @Autowired
-    private QwenService qwenService;
+    private DeepSeekService deepSeekService;
 
     @GetMapping("/chat")
     @Operation(summary = "普通聊天")
     public String chat(@RequestParam("msg") String msg) {
-        return qwenService.chat(msg);
+        return deepSeekService.chat(msg);
     }
 
     @GetMapping("/stream-chat")
     @Operation(summary = "流式响应聊天聊天")
     public Flux<String> streamChat(@RequestParam("msg") String msg) {
-        return qwenService.streamChat(msg);
+        return deepSeekService.streamChat(msg);
     }
 }
